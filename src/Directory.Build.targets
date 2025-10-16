@@ -63,7 +63,7 @@
 	<PropertyGroup>
 		<MSTestVersion>3.11.0</MSTestVersion>
 		<MicrosoftTestingPlatformVersion>1.9.0</MicrosoftTestingPlatformVersion>
-		<SkiaSharpVersion>3.119.0</SkiaSharpVersion>
+		<SkiaSharpVersion>3.119.1</SkiaSharpVersion>
 		<HarfbuzzSharpVersion>8.3.1.1</HarfbuzzSharpVersion>
 	</PropertyGroup>
 
