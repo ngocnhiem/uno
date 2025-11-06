@@ -103,7 +103,7 @@ namespace Microsoft.UI.Xaml.Media.Animation
 				for (int i = 0; i < Children.Count; i++)
 				{
 					var child = Children[i];
-					
+
 					// Try to reverse DoubleAnimation
 					if (child is DoubleAnimation doubleAnim)
 					{
@@ -311,7 +311,7 @@ namespace Microsoft.UI.Xaml.Media.Animation
 				{
 					ReverseChildren();
 				}
-				
+
 				for (int i = 0; i < Children.Count; i++)
 				{
 					ITimeline child = Children[i];
