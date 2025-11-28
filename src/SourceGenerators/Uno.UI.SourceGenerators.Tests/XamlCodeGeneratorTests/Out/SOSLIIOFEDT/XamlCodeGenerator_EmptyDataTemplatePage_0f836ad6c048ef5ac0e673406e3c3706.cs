@@ -100,7 +100,7 @@ namespace TestRepro
 			((global::Microsoft.UI.Xaml.FrameworkElement)this).Unloaded += __StopTracking;
 		}
 		partial void OnInitializeCompleted();
-		private static _View Build_Pag_ResΞ0_DatTem(object __owner, global::Microsoft.UI.Xaml.TemplateMaterializationSettings __settings)
+		private _View Build_Pag_ResΞ0_DatTem(object __owner, global::Microsoft.UI.Xaml.TemplateMaterializationSettings __settings)
 		{
 			"5d034cfbcd11ff7f7f6cfe08e1339adcec1279e4".ToString(); // Forces this method to be updated (and use updated sub class type) when the file is being updated through Hot Reload
 			return new __EmptyDataTemplatePage_0f836ad6c048ef5ac0e673406e3c3706.__Pag_ResΞ0_DatTem().Build(__owner, __settings);
@@ -124,7 +124,7 @@ namespace TestRepro
 			__p1.CreationComplete();
 		}
 
-		private static _View Build_PagΞ0_StaPanΞ1_But_ConTemΞ0_DatTem(object __owner, global::Microsoft.UI.Xaml.TemplateMaterializationSettings __settings)
+		private _View Build_PagΞ0_StaPanΞ1_But_ConTemΞ0_DatTem(object __owner, global::Microsoft.UI.Xaml.TemplateMaterializationSettings __settings)
 		{
 			"5d034cfbcd11ff7f7f6cfe08e1339adcec1279e4".ToString(); // Forces this method to be updated (and use updated sub class type) when the file is being updated through Hot Reload
 			return new __EmptyDataTemplatePage_0f836ad6c048ef5ac0e673406e3c3706.__PagΞ0_StaPanΞ1_But_ConTemΞ0_DatTem().Build(__owner, __settings);
@@ -161,7 +161,7 @@ namespace TestRepro
 		{
 			// Source 0\EmptyDataTemplatePage.xaml (Line 1:3)
 			
-			// WARNING Property __p1.base does not exist on {http://schemas.microsoft.com/winfx/2006/xaml/presentation}Page, the namespace is http://www.w3.org/XML/1998/namespace. This error was considered irrelevant by the XamlFileGenerator
+			// [WARNING] C:/Project/0/EmptyDataTemplatePage.xaml(1,3): Property 'base' does not exist on 'Page', this error was however considered irrelevant by the XamlFileGenerator.
 		}
 
 		[global::System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("Trimming", "IL2026", Justification = "Generated code")]

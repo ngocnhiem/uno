@@ -112,11 +112,6 @@ namespace SamplesApp.Droid
 		{
 			base.OnCreate();
 
-#if RUNTIME_CORECLR
-			// TODO: remove once the Android+CoreCLR runtime properly inits crypto, possibly .NET 10 RC2?
-			Java.Lang.JavaSystem.LoadLibrary("System.Security.Cryptography.Native.Android");
-#endif  // RUNTIME_CORECLR
-
 			// Initialize Android-specific extensions.
 			// These would be generally registered automatically by App.xaml generator,
 			// but in our case it runs in context of SamplesApp.Skia, which does not reference

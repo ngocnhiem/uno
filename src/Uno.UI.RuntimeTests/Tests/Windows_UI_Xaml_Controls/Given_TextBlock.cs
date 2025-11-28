@@ -15,7 +15,6 @@ using Microsoft.UI.Xaml.Media.Imaging;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.System;
 using Windows.UI.Input.Preview.Injection;
-using FluentAssertions;
 using System.Collections.Generic;
 using System.Drawing;
 using SamplesApp.UITests;
@@ -25,6 +24,7 @@ using Uno.UI.Extensions;
 using Combinatorial.MSTest;
 using Uno.UI.Helpers;
 using Microsoft.UI.Xaml.Markup;
+using Uno.UI.Toolkit.DevTools.Input;
 
 #if __SKIA__
 using Microsoft.UI.Xaml.Data;

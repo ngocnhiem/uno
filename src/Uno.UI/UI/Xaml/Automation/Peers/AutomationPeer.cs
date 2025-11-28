@@ -125,6 +125,10 @@ namespace Microsoft.UI.Xaml.Automation.Peers
 		internal bool IsOffscreenHelper(bool ignoreClippingOnScrollContentPresenters)
 			=> false;
 
+		private static string LocalizeControlType(AutomationControlType controlType) =>
+			// TODO: Humanize ("AppBarButton" -> "app bar button")
+			// TODO: Localize
+			Enum.GetName<AutomationControlType>(controlType).ToLowerInvariant();
 		internal bool InvokeAutomationPeer()
 		{
 			// TODO: Add support for ComboBox, Slider, CheckBox, ToggleButton, RadioButton, ToggleSwitch, Selector, etc.
