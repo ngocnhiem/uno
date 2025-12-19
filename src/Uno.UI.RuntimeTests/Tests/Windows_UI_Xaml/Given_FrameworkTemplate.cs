@@ -94,12 +94,30 @@ partial class Given_FrameworkTemplate // tests
 	}
 
 	[TestMethod]
-	public async Task LambdaFactory_ShouldNotBeCollected()
+	public async Task LambdaExpressionFactory_ShouldNotBeCollected()
 	{
 		// Arrange
 		var context = new object();
 		Func<View?>? builder = () => new ContentPresenter { Content = context };
-		Assert.IsNotNull(builder.Target, "The delegate is expected to have a capture here");
+		Assert.IsNotNull(builder.Target, "The delegate is expected to have a target here");
+
+		var template = new DataTemplate(builder);
+		var targetWR = new WeakReference(builder.Target);
+
+		// Act
+		builder = null;
+		await TestHelper.TryWaitUntilCollected(targetWR);
+
+		// Assert
+		Assert.IsNotNull(targetWR.Target);
+	}
+
+	[TestMethod]
+	public async Task LambdaExpressionFactory2_ShouldNotBeCollected()
+	{
+		// Arrange
+		Func<View?>? builder = () => new Border();
+		Assert.IsNotNull(builder.Target, "The delegate is expected to have a target here");
 
 		var template = new DataTemplate(builder);
 		var targetWR = new WeakReference(builder.Target);
