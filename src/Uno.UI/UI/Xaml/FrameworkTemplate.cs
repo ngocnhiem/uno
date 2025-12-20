@@ -147,6 +147,11 @@ namespace Microsoft.UI.Xaml
 
 				ViewFactory = adapted;
 				ViewFactoryInner = inner;
+
+				inner.Target?.ToString();
+				inner.Method.ToString();
+				adapted.Target?.ToString();
+				adapted.Method.ToString();
 			}
 			else
 			{
