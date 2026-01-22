@@ -44,9 +44,7 @@ public class DevServerMonitor(IServiceProvider services, ILogger<DevServerMonito
 			try
 			{
 				// If we don't have a solution, we can't start a DevServer yet.
-				var solutionFiles = Directory
-					.EnumerateFiles(_currentDirectory, "*.sln")
-					.Concat(Directory.EnumerateFiles(_currentDirectory, "*.slnx")).ToArray();
+				var solutionFiles = SolutionDiscovery.DiscoverSolutions(_currentDirectory, _logger);
 
 				if (solutionFiles.Length != 0)
 				{
