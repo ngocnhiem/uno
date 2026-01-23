@@ -46,6 +46,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\CustomTitleBarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\ExtendContentIntoTitleBarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\DraggableRegionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\CustomTitleBar_Tests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\AppWindowTitleBarProperties.xaml" />
     <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\SingleWindowClose.xaml">
       <SubType>Designer</SubType>
@@ -501,10 +517,28 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_WebResourceRequested.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_WebResourceRequested_Multiple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_OuterSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_DocumentTitleChanged.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_WebResourceRequested.xaml.cs">
+      <DependentUpon>WebView2_WebResourceRequested.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_WebResourceRequested_Multiple.xaml.cs">
+      <DependentUpon>WebView2_WebResourceRequested_Multiple.xaml</DependentUpon>
+    </Compile>
     <Page Include="$(MSBuildThisFileDirectory)Msal\MsalLoginAndGraph.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1534,6 +1568,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\CalendarView\CalendarView_Cultures.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\CommandBar\CommandBar_Native_With_AppBarButton_Binding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -2087,6 +2125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\GridView\GridViewGroupPadding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\GridView\GridView_ItemContainerStyle_Selection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2779,6 +2821,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\TextBox\TextBox_Focus_Programmatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\TextBox\TextBox_FocusNavigation_Enter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -4330,7 +4376,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-        
     <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_TargetBlank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -4348,6 +4393,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_Basic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_WindowClose.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -4448,6 +4497,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Input\RoutedEvents\RoutedEventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Input\ContextMenu\ContextRequested_Sample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -5713,6 +5766,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\SingleWindowClose.xaml.cs">
       <DependentUpon>SingleWindowClose.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\CustomTitleBar_Tests.xaml.cs">
+      <DependentUpon>CustomTitleBar_Tests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\ExtendContentIntoTitleBarWindow.xaml.cs">
+      <DependentUpon>ExtendContentIntoTitleBarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\DraggableRegionWindow.xaml.cs">
+      <DependentUpon>DraggableRegionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\CustomTitleBarWindow.xaml.cs">
+      <DependentUpon>CustomTitleBarWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Windowing\OverlappedPresenterTests.xaml.cs">
       <DependentUpon>OverlappedPresenterTests.xaml</DependentUpon>
     </Compile>
@@ -6057,6 +6122,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_OuterSelection.xaml.cs">
       <DependentUpon>WebView2_OuterSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_DocumentTitleChanged.xaml.cs">
+      <DependentUpon>WebView2_DocumentTitleChanged.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Msal\MsalLoginAndGraph.xaml.cs">
       <DependentUpon>MsalLoginAndGraph.xaml</DependentUpon>
@@ -6468,6 +6536,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\BorderTests\BorderWithNullBrushAndNonZeroThickness.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\BorderTests\PanelWithNullBrushAndNonZeroThickness.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\CalendarView\CalendarView_Cultures.xaml.cs">
+      <DependentUpon>CalendarView_Cultures.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\CommandBar\CommandBar_Native_With_AppBarButton_Binding.xaml.cs">
       <DependentUpon>CommandBar_Native_With_AppBarButton_Binding.xaml</DependentUpon>
     </Compile>
@@ -7142,6 +7213,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\GridView\GridViewGroupPadding.xaml.cs">
       <DependentUpon>GridViewGroupPadding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\GridView\GridView_ItemContainerStyle_Selection.xaml.cs">
+      <DependentUpon>GridView_ItemContainerStyle_Selection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\GridView\GridViewItemWidthItemHeight.xaml.cs">
       <DependentUpon>GridViewItemWidthItemHeight.xaml</DependentUpon>
     </Compile>
@@ -7647,6 +7721,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\TextBox\TextBox_Focus_Programmatic.xaml.cs">
       <DependentUpon>TextBox_Focus_Programmatic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\TextBox\TextBox_FocusNavigation_Enter.xaml.cs">
+      <DependentUpon>TextBox_FocusNavigation_Enter.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Controls\TextBox\TextBox_Foreground_Changing.xaml.cs">
       <DependentUpon>TextBox_Foreground_Changing.xaml</DependentUpon>
@@ -8544,6 +8621,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Input\RoutedEvents\RoutedEvent_TappedControl.xaml.cs">
       <DependentUpon>RoutedEvent_TappedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Input\ContextMenu\ContextRequested_Sample.xaml.cs">
+      <DependentUpon>ContextRequested_Sample.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Windows_UI_Xaml_Media\AcrylicBrushTests\BasicAcrylicBrushTest.xaml.cs">
       <DependentUpon>BasicAcrylicBrushTest.xaml</DependentUpon>
@@ -9729,6 +9809,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_Basic.xaml.cs">
       <DependentUpon>WebView2_Basic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_WindowClose.xaml.cs">
+      <DependentUpon>WebView2_WindowClose.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Microsoft_UI_Xaml_Controls\WebView2Tests\WebView2_ManagedOverlay.xaml.cs">
       <DependentUpon>WebView2_ManagedOverlay.xaml</DependentUpon>

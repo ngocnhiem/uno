@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using Uno.UI;
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Automation.Peers;
 
 namespace Microsoft.UI.Xaml.Automation;
@@ -7,211 +10,210 @@ namespace Microsoft.UI.Xaml.Automation;
 /// Provides attached properties that expose UI Automation metadata for elements.
 /// Based on Microsoft Learn: AutomationProperties (Microsoft.UI.Xaml.Automation).
 /// </summary>
-public partial class AutomationProperties
-{
-	/// <summary>
-	/// Identifies the AcceleratorKey attached property, which describes the accelerator (shortcut) key combination for an element.
-	/// </summary>
-	public static DependencyProperty AcceleratorKeyProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"AcceleratorKey",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(string)));
+	[Bindable]
+	public sealed partial class AutomationProperties
+	{
+		/// <summary>
+		/// Identifies the AcceleratorKey attached property, which describes the accelerator (shortcut) key combination for an element.
+		/// </summary>
+		public static DependencyProperty AcceleratorKeyProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"AcceleratorKey",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(string)));
 
-	/// <summary>
-	/// Identifies the AccessKey attached property, which specifies the access key (mnemonic) for an element.
-	/// </summary>
-	public static DependencyProperty AccessKeyProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"AccessKey",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(string)));
+		/// <summary>
+		/// Identifies the AccessKey attached property, which specifies the access key (mnemonic) for an element.
+		/// </summary>
+		public static DependencyProperty AccessKeyProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"AccessKey",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(string)));
 
-	/// <summary>
-	/// Identifies the AccessibilityView attached property, which controls whether and how the element appears in the UI Automation tree.
-	/// </summary>
-	public static DependencyProperty AccessibilityViewProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"AccessibilityView",
-			typeof(AccessibilityView),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(AccessibilityView.Content));
+		/// <summary>
+		/// Identifies the AccessibilityView attached property, which controls whether and how the element appears in the UI Automation tree.
+		/// </summary>
+		public static DependencyProperty AccessibilityViewProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"AccessibilityView",
+				typeof(AccessibilityView),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(AccessibilityView.Content));
 
-	/// <summary>
-	/// Identifies the Annotations attached property, which provides a collection of annotations associated with the element.
-	/// </summary>
-	public static DependencyProperty AnnotationsProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"Annotations",
-			typeof(IList<AutomationAnnotation>),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(IList<AutomationAnnotation>)));
+		/// <summary>
+		/// Identifies the Annotations attached property, which provides a collection of annotations associated with the element.
+		/// </summary>
+		public static DependencyProperty AnnotationsProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"Annotations",
+				typeof(IList<AutomationAnnotation>),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(IList<AutomationAnnotation>)));
 
-	/// <summary>
-	/// Identifies the AutomationId attached property, which sets a developer-supplied identifier used by UI Automation.
-	/// </summary>
-	public static DependencyProperty AutomationIdProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"AutomationId",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(
-				"",
-				OnAutomationIdChanged));
+		/// <summary>
+		/// Identifies the AutomationId attached property, which sets a developer-supplied identifier used by UI Automation.
+		/// </summary>
+		public static DependencyProperty AutomationIdProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"AutomationId",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(
+					"",
+					OnAutomationIdChanged));
 
-	/// <summary>
-	/// Identifies the ControlledPeers attached property, which lists peers that this element directly controls.
-	/// </summary>
-	public static DependencyProperty ControlledPeersProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"ControlledPeers",
-			typeof(IList<UIElement>),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(IList<UIElement>)));
+		/// <summary>
+		/// Identifies the ControlledPeers attached property, which lists peers that this element directly controls.
+		/// </summary>
+		public static DependencyProperty ControlledPeersProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"ControlledPeers",
+				typeof(IList<UIElement>),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(IList<UIElement>)));
 
-	/// <summary>
-	/// Identifies the Culture attached property, which reports the default input language or content locale for the element.
-	/// </summary>
-	public static DependencyProperty CultureProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"Culture",
-			typeof(int),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(int)));
+		/// <summary>
+		/// Identifies the Culture attached property, which reports the default input language or content locale for the element.
+		/// </summary>
+		public static DependencyProperty CultureProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"Culture",
+				typeof(int),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(int)));
 
-	/// <summary>
-	/// Identifies the DescribedBy attached property, which points to elements that provide extended descriptive text.
-	/// </summary>
-	public static DependencyProperty DescribedByProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"DescribedBy",
-			typeof(IList<DependencyObject>),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(IList<DependencyObject>)));
+		/// <summary>
+		/// Identifies the DescribedBy attached property, which points to elements that provide extended descriptive text.
+		/// </summary>
+		public static DependencyProperty DescribedByProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"DescribedBy",
+				typeof(IList<DependencyObject>),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(IList<DependencyObject>)));
 
-	/// <summary>
-	/// Identifies the FlowsFrom attached property, which indicates the reading order origin for the element.
-	/// </summary>
-	public static DependencyProperty FlowsFromProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"FlowsFrom",
-			typeof(IList<DependencyObject>),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(IList<DependencyObject>)));
+		/// <summary>
+		/// Identifies the FlowsFrom attached property, which indicates the reading order origin for the element.
+		/// </summary>
+		public static DependencyProperty FlowsFromProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"FlowsFrom",
+				typeof(IList<DependencyObject>),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(IList<DependencyObject>)));
 
-	/// <summary>
-	/// Identifies the FlowsTo attached property, which indicates the next elements in the reading order.
-	/// </summary>
-	public static DependencyProperty FlowsToProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"FlowsTo",
-			typeof(IList<DependencyObject>),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(IList<DependencyObject>)));
+		/// <summary>
+		/// Identifies the FlowsTo attached property, which indicates the next elements in the reading order.
+		/// </summary>
+		public static DependencyProperty FlowsToProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"FlowsTo",
+				typeof(IList<DependencyObject>),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(IList<DependencyObject>)));
 
-	/// <summary>
-	/// Identifies the FullDescription attached property, which provides a complete description of the element for assistive technologies.
-	/// </summary>
-	public static DependencyProperty FullDescriptionProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"FullDescription",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(string)));
+		/// <summary>
+		/// Identifies the FullDescription attached property, which provides a complete description of the element for assistive technologies.
+		/// </summary>
+		public static DependencyProperty FullDescriptionProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"FullDescription",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(string)));
 
-	/// <summary>
-	/// Identifies the HeadingLevel attached property, which indicates the heading level for structured content.
-	/// </summary>
-	public static DependencyProperty HeadingLevelProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"HeadingLevel",
-			typeof(AutomationHeadingLevel),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(AutomationHeadingLevel)));
+		/// <summary>
+		/// Identifies the HeadingLevel attached property, which indicates the heading level for structured content.
+		/// </summary>
+		public static DependencyProperty HeadingLevelProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"HeadingLevel",
+				typeof(AutomationHeadingLevel),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(AutomationHeadingLevel)));
 
-	/// <summary>
-	/// Identifies the HelpText attached property, which supplies helpful context or instructions for the element.
-	/// </summary>
-	public static DependencyProperty HelpTextProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"HelpText",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(string)));
+		/// <summary>
+		/// Identifies the HelpText attached property, which supplies helpful context or instructions for the element.
+		/// </summary>
+		public static DependencyProperty HelpTextProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"HelpText",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(string)));
 
-	/// <summary>
-	/// Identifies the IsDataValidForForm attached property, which indicates whether the element’s value is valid for form submission.
-	/// </summary>
-	public static DependencyProperty IsDataValidForFormProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"IsDataValidForForm",
-			typeof(bool),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(bool)));
+		/// <summary>
+		/// Identifies the IsDataValidForForm attached property, which indicates whether the element’s value is valid for form submission.
+		/// </summary>
+		public static DependencyProperty IsDataValidForFormProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"IsDataValidForForm",
+				typeof(bool),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(bool)));
 
-	/// <summary>
-	/// Identifies the IsDialog attached property, which indicates whether the element represents a dialog.
-	/// </summary>
-	public static DependencyProperty IsDialogProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"IsDialog",
-			typeof(bool),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(bool)));
+		/// <summary>
+		/// Identifies the IsDialog attached property, which indicates whether the element represents a dialog.
+		/// </summary>
+		public static DependencyProperty IsDialogProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"IsDialog",
+				typeof(bool),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(bool)));
 
-	/// <summary>
-	/// Identifies the IsPeripheral attached property, which indicates whether the element is peripheral to the main UI experience.
-	/// </summary>
-	public static DependencyProperty IsPeripheralProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"IsPeripheral",
-			typeof(bool),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(bool)));
+		/// <summary>
+		/// Identifies the IsPeripheral attached property, which indicates whether the element is peripheral to the main UI experience.
+		/// </summary>
+		public static DependencyProperty IsPeripheralProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"IsPeripheral",
+				typeof(bool),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(bool)));
 
-	/// <summary>
-	/// Identifies the IsRequiredForForm attached property, which indicates whether the element requires user input before form submission.
-	/// </summary>
-	public static DependencyProperty IsRequiredForFormProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"IsRequiredForForm",
-			typeof(bool),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(bool)));
+		/// <summary>
+		/// Identifies the IsRequiredForForm attached property, which indicates whether the element requires user input before form submission.
+		/// </summary>
+		public static DependencyProperty IsRequiredForFormProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"IsRequiredForForm",
+				typeof(bool),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(bool)));
 
-	/// <summary>
-	/// Identifies the ItemStatus attached property, which conveys status information about an element (for example, “New” or “Busy”).
-	/// </summary>
-	public static DependencyProperty ItemStatusProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"ItemStatus",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(string)));
+		/// <summary>
+		/// Identifies the ItemStatus attached property, which conveys status information about an element (for example, “New” or “Busy”).
+		/// </summary>
+		public static DependencyProperty ItemStatusProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"ItemStatus",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(string)));
 
-	/// <summary>
-	/// Identifies the ItemType attached property, which describes the type of item represented by the element.
-	/// </summary>
-	public static DependencyProperty ItemTypeProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"ItemType",
-			typeof(string),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(string)));
+		/// <summary>
+		/// Identifies the ItemType attached property, which describes the type of item represented by the element.
+		/// </summary>
+		public static DependencyProperty ItemTypeProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"ItemType",
+				typeof(string),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(string)));
 
-	/// <summary>
-	/// Identifies the LabeledBy attached property, which references an element that provides the accessible label.
-	/// </summary>
-	public static DependencyProperty LabeledByProperty { get; } =
-		DependencyProperty.RegisterAttached(
-			"LabeledBy",
-			typeof(UIElement),
-			typeof(AutomationProperties),
-			new FrameworkPropertyMetadata(default(UIElement))
-		);
-
+		/// <summary>
+		/// Identifies the LabeledBy attached property, which references an element that provides the accessible label.
+		/// </summary>
+		public static DependencyProperty LabeledByProperty { get; } =
+			DependencyProperty.RegisterAttached(
+				"LabeledBy",
+				typeof(UIElement),
+				typeof(AutomationProperties),
+				new FrameworkPropertyMetadata(default(UIElement)));
 	/// <summary>
 	/// Identifies the LandmarkType attached property, which indicates the landmark role of a region for navigation.
 	/// </summary>
